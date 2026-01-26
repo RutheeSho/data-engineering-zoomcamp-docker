@@ -34,8 +34,8 @@ PARSE_DATES = [
     "tpep_dropoff_datetime"
 ]
 
-PREFIX = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/"
-FILE_NAME = "yellow_tripdata_2021-01.csv.gz"
+PREFIX = "https://d37ci6vzurychx.cloudfront.net/trip-data/"
+FILE_NAME = "green_tripdata_2025-11.parquet"
 
 
 # -----------------------
@@ -84,7 +84,7 @@ def ingest_data(engine, table_name):
 @click.option('--pg-host', default='localhost', help='PostgreSQL host')
 @click.option('--pg-port', default=5432, type=int, help='PostgreSQL port')
 @click.option('--pg-db', default='ny_taxi', help='PostgreSQL database name')
-@click.option('--target-table', default='yellow_taxi_data', help='Target table name')
+@click.option('--target-table', default='green_taxi_data', help='Target table name')
 def run(pg_user, pg_pass, pg_host, pg_port, pg_db, target_table):
 
     db_url = f"postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
