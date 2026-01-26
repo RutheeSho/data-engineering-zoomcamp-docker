@@ -1,6 +1,10 @@
 import sys
 import pandas as pd
+uv run python pipeline.py 10
+print("arguments", sys.argv)
 
+day = int(sys.argv[1])
+print(f"Running pipeline for day {day}")
 
 
 df = pd.DataFrame({"A": [1, 2], "B": [3, 4]})
